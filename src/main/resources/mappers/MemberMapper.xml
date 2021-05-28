@@ -7,19 +7,9 @@
 		<result column="regdate" property="registerDateTime"/>
 	</resultMap>
 	
-	<select id="selectMemberByEmail" parameterType="Member" resultMap="resMember">
-		select id, email, password, name, regdate 
-		from member
-		where email=#{email}
-	</select>
-	
 	<select id="selectMemberAll" resultMap="resMember">
 		select id, email, password, name, regdate 
 		from member 
-	</select>
-	
-	<select id="countMember" resultType="int">
-		select count(*) from member
 	</select>
 	
 	<insert id="insertMember" parameterType="Member">
@@ -35,15 +25,8 @@
 
 	<delete id="deleteMember">
 		delete from member 
-		where email=#{email}
+		where email = #{email}
 	</delete>
-	
-	<select id="selectMemberByRegdate" parameterType="ListCommand" resultMap="resMember">
-		select id, email, password, name, regdate 
-		from member 
-		where regdate between #{from} and #{to}
-		order by regdate desc
-	</select>
 	
 	<select id="selectById" resultMap="resMember">
 		select id, email, password, name, regdate 

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("spring5_webmvc_mybatis_study.mapper")
+@MapperScan("spring5_rest_study.mapper")
 public class ContextSqlSession {
 
 	@Autowired
