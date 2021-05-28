@@ -55,28 +55,36 @@ public class MemberMapperTest {
 	@Test
 	public void test03InsertMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		Member newMember = new Member("test20@test.co.kr", "1111", "test20");
+		Member newMember = new Member("test200@test.co.kr", "1111", "test200");
 		
 		int res = mapper.insertMember(newMember);
 		Assert.assertEquals(1, res);
+		log.debug("res id >> " + res);
+		
+		mapper.deleteMember(newMember.getId());
 	}
 
 	@Test
 	public void test04UpdateMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 
-		Member newMember = new Member("test20@test.co.kr", "2222", "테스트20");
+		Member newMember = new Member("test200@test.co.kr", "2222", "test200");
+		mapper.insertMember(newMember);
 		
+		newMember.setPassword("1111");
 		int res = mapper.updateMember(newMember);
 		Assert.assertEquals(1, res);
+
+		mapper.deleteMember(newMember.getId());
 	}
 
 	@Test
 	public void test05DeleteMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 		
-		Member newMember = new Member("test20@test.co.kr", "2222", "테스트20");
-		int res = mapper.deleteMember(newMember);
+		Member newMember = new Member("test200@test.co.kr", "1111", "test200");
+		mapper.insertMember(newMember);
+		int res = mapper.deleteMember(newMember.getId());
 		Assert.assertEquals(1, res);
 	}
 

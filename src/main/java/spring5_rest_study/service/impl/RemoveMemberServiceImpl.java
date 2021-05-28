@@ -17,9 +17,9 @@ public class RemoveMemberServiceImpl implements RemoveMemberService {
 	private MemberMapper mapper;
 	
 	@Override
-	public int removeMember(Member member) {
-		log.debug("service - removeMemberByNo() > "+ member);
-		return mapper.deleteMember(member);
+	public int removeMember(long id) {
+		log.debug("service - removeMemberByNo() > "+ id);
+		return mapper.deleteMember(id);
 	}
 
 }

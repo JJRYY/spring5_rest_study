@@ -10,8 +10,8 @@ import spring5_rest_study.dto.Member;
 public interface MemberMapper {
 	
 	List<Member> selectMemberAll();
-	Member selectById(Long memId);
+	Member selectById(Long id);
 	int insertMember(Member member);
 	int updateMember(Member member);
-	int deleteMember(Member member);
+	int deleteMember(Long id);
 }
