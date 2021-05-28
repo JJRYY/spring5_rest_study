@@ -2,6 +2,7 @@ package spring5_rest_study.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class ModifyMemberController {
 	@Autowired
 	private ModifyMemberService service;
 	
-	@PutMapping("/members/{id}")
+	@PatchMapping("/members/{id}")
 	public ResponseEntity<Object> updateMember(@PathVariable long id, @RequestBody Member member) {
 		System.out.println("updateMember > " + member);
 		return ResponseEntity.ok(service.modifyMember(member));

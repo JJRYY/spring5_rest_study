@@ -40,7 +40,9 @@ public class MvcConfig implements WebMvcConfigurer {
 	// 컨트롤러 구현 없는 경로 매핑
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/main").setViewName("main");
+		registry.addViewController("/memberlist").setViewName("/member/list");
+		registry.addViewController("/read").setViewName("/member/get");
+		registry.addViewController("/registerMember").setViewName("/member/register");
 	}
 	
 	/* Bean의 아이디를 반드시 "messageSource"로 지정해야 됨
