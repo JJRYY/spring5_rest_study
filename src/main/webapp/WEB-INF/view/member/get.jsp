@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	$(function(){
 		var contextPath = "<%=request.getContextPath() %>";
-		var id = ${id};
+		var id = ${param.id};
 		$.get(contextPath + "/api/members/"+id,
 			function(json){
 					var sCont = "";
@@ -52,10 +52,10 @@
 	
 </script>
 </head>
-${id }
+${param.id }
 <body>
 	<table border="1">
-		<thead><th>아이디</th><th>이름</th><th>이메일</th><th>가입일</th></thead>
+		<thead><tr><th>아이디</th><th>이름</th><th>이메일</th><th>가입일</th></tr></thead>
 		<tbody id="load"></tbody>
 	</table>
 	<button id="remove">삭제</button>

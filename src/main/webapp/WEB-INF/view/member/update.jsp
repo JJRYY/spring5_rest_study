@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 	$(function(){
 		var contextPath = "<%=request.getContextPath() %>";
 		
-		var id = ${id};
+		var id = ${param.id};
 		$.get(contextPath + "/api/members/" + id,
 			function(json){
 			$('#id').val(json.id);	
@@ -57,7 +58,7 @@
 	});
 </script>
 </head>
-${id }
+${param.id }
 <body>
 	<form:form>
 		<p><label>아이디:<input id="id" type="number" value="${id }" readonly="readonly"/></label></p>
