@@ -49,7 +49,7 @@
 					alert(data);
 					window.location.href = contextPath + "/memberlist";
 				},
-				error: function(data, status, er){
+				error: function(data, status, error){
 					alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
 					window.location.href = contextPath + "/memberlist";
 				}
